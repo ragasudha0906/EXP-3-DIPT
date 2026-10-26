@@ -1,6 +1,26 @@
-# EX 03 - RECORD-HISTOGRAM PROCESSING
+# EX 03 - HISTOGRAM PROCESSING
 ## NAME : RAGASUDHA R
 ## REG NO :212224230215
+## Procedure
+
+### *Part 1: Histogram Equalization for Grayscale Images*
+
+1. *Import Libraries:* Import the necessary libraries (cv2, numpy, and matplotlib.pyplot).
+2. *Load the Image:* Read the input image in grayscale mode (cv2.IMREAD_GRAYSCALE).
+3. *Display Original Image:* Plot and display the original grayscale image using plt.imshow().
+4. *Plot Original Histogram:* Compute and plot the pixel intensity distribution (histogram) of the original grayscale image using plt.hist().
+5. *Apply Equalization:* Enhance the contrast of the grayscale image using OpenCV's histogram equalization function (cv2.equalizeHist()).
+6. *Display Equalized Results:* Plot the histogram and display the equalized image to observe the improvement in contrast.
+
+### *Part 2: Histogram Equalization for Color Images*
+
+1. *Load Color Image:* Read the input image in color mode (cv2.IMREAD_COLOR).
+2. *Convert Color Space:* Convert the image from the BGR color space to the HSV color space using cv2.cvtColor().
+3. *Equalize the Value Channel:* Extract the Value ($V$) channel (which represents brightness/intensity) from the HSV image and apply histogram equalization specifically to it, preserving the color information.
+4. *Convert Back to BGR:* Merge the channels and convert the HSV image back to the BGR color space.
+5. *Visualize and Compare:*
+* Display both the original color image and the equalized color image side by side using subplots.
+* Plot and compare the histograms of the original and equalized color images.
 ## CODE
 ```python
 import cv2
@@ -42,7 +62,8 @@ plt.subplot(122); plt.hist(img_eq.ravel(),256,range = [0, 256]); plt.title('Hist
 <img width="1026" height="556" alt="image" src="https://github.com/user-attachments/assets/ee8997be-ae1c-4b9e-acfe-30a9dc937807" />
 <img width="1245" height="431" alt="image" src="https://github.com/user-attachments/assets/54151227-78fa-4fca-b16a-272a67d73997" />
 <img width="1251" height="415" alt="image" src="https://github.com/user-attachments/assets/d3bc373f-ee58-4798-96f3-3342ff34378c" />
-## RESULT
 
+## RESULT
+Thus, the histogram processing of the given image was successfully performed using OpenCV, and the pixel intensity distribution was displayed and analyzed.
 
 
